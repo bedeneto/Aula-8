@@ -1,0 +1,60 @@
+class Carro:
+    def __init__(self, modelo, ano, auto):
+        self.modelo = modelo
+        self.ano = ano
+        self.velocidadeAtual = 0.0
+        self.ligado = False
+        self.auto = auto
+
+    def ligar(self):
+        if self.ligado == False:
+            self.ligado = True
+            print("O carro foi ligado.")
+        else:
+            print("O carro já está ligado.")
+
+    def desligar(self):
+        if self.ligado == True:
+            self.ligado = False
+            print("O carro foi desligado.")
+        else:
+            print("O carro já está desligado.")
+
+    def acelerar(self):
+        if self.ligado == True:
+            aceleracao = float(input("Quantos km/h deseja acelerar? "))
+            if self.velocidadeAtual + aceleracao <= 120:
+                self.velocidadeAtual = self.velocidadeAtual + aceleracao
+            else:
+                print("Você atingiu a velocidade máxima.")
+                self.velocidadeAtual = 120
+        else:
+            print("Você não pode acelerar, pois o carro está desligado.")
+
+    def verificaMarcha(self):
+        if self.velocidadeAtual <= 20:
+            print("1ª marcha")
+        elif self.velocidadeAtual > 20 and self.velocidadeAtual <=30:
+            print("2ª marcha")
+        elif self.velocidadeAtual > 30 and self.velocidadeAtual <= 35:
+            print("3ª marcha")
+        elif self.velocidadeAtual > 35 and self.velocidadeAtual <= 45:
+            print("4ª marcha")
+        elif self.velocidadeAtual > 45:
+            print("5ª marcha")
+
+
+#modelo = input("Modelo: ")
+#ano = input("Ano: ")
+#auto = input("Automático: ")
+
+carro = Carro('onix', 2022, True)
+
+carro.ligar()
+carro.acelerar()
+carro.acelerar()
+carro.acelerar()
+carro.verificaMarcha()
+carro.desligar()
+
+
