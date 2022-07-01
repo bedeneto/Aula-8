@@ -1,0 +1,38 @@
+class Aluno:
+    def __init__(self, matricula, nome):
+        self.matricula = matricula
+        self.nome = nome
+        self.semestre = 1
+        self.media = 0.0
+
+    def calcularMedia(self):
+        n1 = float(input("Informe a primeira nota: "))
+        n2 = float(input("Informe a segunda nota: "))
+        self.media = (n1 + n2)/2
+
+        print(f"A média do aluno é igual a {self.media}.")
+
+
+    def passarSemestre(self):
+        if self.media >= 7:
+            print(f"O aluno está aprovado com média {self.media}.")
+            self.semestre += 1
+        else:
+            print("O aluno está reprovado")
+
+        self.media = 0.0
+
+
+
+    def info(self):
+        print(f'Aluno: {self.nome}')
+        print(f'Matricula: {self.matricula}')
+        print(f'Semestre: {self.semestre}º semestre')
+
+aluno = Aluno(123, "joao")
+
+aluno.calcularMedia()
+aluno.passarSemestre()
+print(aluno.media)
+aluno.info()
+        
