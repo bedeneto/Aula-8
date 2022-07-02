@@ -1,0 +1,43 @@
+class Pessoa:
+    def __init__(self):
+        self.__nome = ''
+        self.__idade = 0
+        self.__cpf = ''
+
+    @nome.setter
+    def nome(self, nome):
+        self.__nome = nome
+
+    @idade.setter
+    def idade(self, idade):
+        self.__idade = idade
+
+    @cpf.setter
+    def cpf(self, cpf):
+        self.__cpf = cpf
+
+    @property
+    def nome(self):
+        return self.__nome
+
+    @property
+    def idade(self):
+        return self.__idade
+
+    @property
+    def cpf(self):
+        return self.__cpf
+
+pessoa = Pessoa()
+
+nome = input("Nome: ")
+cpf = input("CPF: ")
+idade = int(input("Idade: "))
+
+pessoa.cpf = cpf
+pessoa.nome = nome
+pessoa.idade = idade
+
+print(pessoa.cpf)
+print(pessoa.nome)
+print(pessoa.idade)
