@@ -1,0 +1,31 @@
+class Produto:
+    def __init__(self, nome, categoria, preco):
+        self.__nome = nome
+        self.__categoria = categoria
+        self.__preco = preco
+
+    @property
+    def nome(self):
+        return self.__nome
+
+    @property
+    def preco(self):
+        return self.__preco
+
+    @preco.setter
+    def preco(self, desconto):
+        if desconto > 15:
+            print("O produto não pode receber desconto de mais de 15%.")
+        else:
+            self.__preco = (self.__preco * (100 - desconto)/100)
+            print(f"O valor final do produto é R${self.__preco:.2f}.")
+
+nome = input("Qual o nome do produto: ")
+categoria = input("Qual a categoria do produto: ")
+preco = float(input("Qual o valor do produto: "))
+desconto = float(input("Qual o valor do desconto: "))
+
+produto = Produto(nome, categoria, preco)
+
+produto.preco = desconto
+
